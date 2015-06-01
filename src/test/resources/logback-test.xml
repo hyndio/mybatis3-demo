@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<contextName>mybatis3-demo</contextName>
+	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+    <!-- 可让每天产生一个日志文件，最多 10 个，自动回滚 -->
+<!--	<appender name="sql_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>d:/log/sql_log-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>-->
+    
+	<logger name="me.hynd" level="debug" additivity="true"/>
+	<logger name="org.mybatis" level="debug" additivity="true"/>
+
+	<!--druid -->
+	<logger name='druid.sql.DataSource' level="debug" additivity="true" />
+	<logger name='druid.sql.Connection' level="debug" additivity="true" />
+	<logger name='druid.sql.Statement' level="debug" additivity="true" />
+	<logger name='druid.sql.ResultSet' level="debug" additivity="true" />
+<!--        <appender-ref ref="sql_log"/>
+    </logger>-->
+	
+	<root level="debug">
+		<appender-ref ref="console" />
+	</root>
+</configuration>

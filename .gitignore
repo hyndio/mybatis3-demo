@@ -1,5 +1,9 @@
 *.class
 
+.idea
+target
+mybatis3-demo.iml
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
